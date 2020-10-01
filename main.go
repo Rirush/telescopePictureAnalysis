@@ -164,10 +164,8 @@ func main() {
 	}
 	column := GetColumn(img, 140)
 	cedge1, cedge2, cedge3, cedge4 := DetectEdges(column, 3, 10)
-	fmt.Println(cedge1, cedge2, cedge3, cedge4)
 	row := GetRow(img, 145)
 	vedge1, vedge2, vedge3, vedge4 := DetectEdges(row, 3, 10)
-	fmt.Println(vedge1, vedge2, vedge3, vedge4)
 	region1 := image.Rect(vedge1, cedge1, vedge2, cedge2)
 	region2 := image.Rect(vedge3, cedge1, vedge4, cedge2)
 	region3 := image.Rect(vedge1, cedge3, vedge2, cedge4)
