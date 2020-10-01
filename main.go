@@ -148,8 +148,8 @@ func Draw(img *image.RGBA, bounds image.Rectangle) {
 }
 
 func main() {
-	if len(os.Args) != 2 {
-		fmt.Println("Usage: tool picture")
+	if len(os.Args) != 3 {
+		fmt.Println("Usage: tool inputPicture outputPicture")
 		return
 	}
 	f, err := os.Open(os.Args[1])
@@ -184,7 +184,7 @@ func main() {
 	Draw(out, region3)
 	Draw(out, region4)
 
-	f, err = os.OpenFile("test.png", os.O_CREATE | os.O_TRUNC, 0755)
+	f, err = os.OpenFile(os.Args[3], os.O_CREATE | os.O_TRUNC, 0755)
 	if err != nil {
 		fmt.Println(err)
 		return
